@@ -1,0 +1,5 @@
+params = {};
+params['inboundBlob'] = 'blob://demo.blobs.archive/input/2.csv';
+params['jsonOut'] = 'test_map.json';
+params['hashCode'] = '847841744';
+#decision.createWorkOrder("workflow://workflows/web_demo_curate", params);

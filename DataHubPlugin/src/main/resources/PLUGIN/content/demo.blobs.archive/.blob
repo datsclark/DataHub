@@ -1,0 +1,6 @@
+{ 
+  "authority" : "demo.blobs.archive", 
+  "description" : "Blob demo.blobs.archive", 
+  "config" : "BLOB {} USING MONGODB { prefix=\"demo.blobs.archive\" }", 
+  "metaConfig" : "REP {} USING MONGODB { prefix=\"demo.blobs.archive\"}" 
+}

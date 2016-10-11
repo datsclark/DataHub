@@ -1,0 +1,1 @@
+legal Veh|Account|contractType|contractDate|contractNbr|contractSfx|Portfolio|Sec Type|Security ID|Maturity Date|Coupon Rate|Par|Market Value|Contract Value|Haircut Value|Short|Long|Excess Market|End Date|

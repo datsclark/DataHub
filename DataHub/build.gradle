@@ -1,0 +1,51 @@
+version = '1.0.0'
+
+ext {
+  raptureVersion = '3.0.4'
+}
+
+apply plugin: 'java'
+apply plugin: 'application'
+
+repositories {
+  mavenLocal()
+  mavenCentral()
+}
+
+dependencies {
+  compile "net.rapture:RaptureAPI:$raptureVersion"
+  compile "net.rapture:RaptureCore:$raptureVersion"
+  compile "net.rapture:RaptureAppConfig:$raptureVersion"
+  compile "net.rapture:MongoDb:$raptureVersion"
+  compile "net.rapture:RabbitMQ:$raptureVersion"
+  compile "net.rapture:Postgres:$raptureVersion"
+  compile 'com.rapture:DataHubCommon:1.0.0'
+  compile "com.sparkjava:spark-core:2.5"
+  compile 'com.mashape.unirest:unirest-java:1.4.9'
+  compile 'commons-net:commons-net:3.5'
+  testCompile 'junit:junit:4.12'
+  compile 'org.apache.commons:commons-csv:1.4'
+  compile 'com.google.code.gson:gson:2.7'
+  compile 'com.j2html:j2html:0.7'
+}
+
+task copyConfigFiles (type: Copy) {
+  from 'src/main/resources';
+  include 'rapture/config/*.cfg'
+  into 'build/config'
+  outputs.upToDateWhen { false }
+}
+
+compileJava {
+  dependsOn copyConfigFiles
+}
+
+jar.excludes = ['rapture/config']
+
+task configDir {
+  outputs.dir file("$buildDir/config")
+}
+
+applicationDistribution.from(configDir) { into "etc" }
+
+mainClassName = "rapture.datahub.DataHub"

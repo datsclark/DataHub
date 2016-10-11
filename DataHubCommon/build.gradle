@@ -1,0 +1,22 @@
+version = '1.0.0'
+group = 'com.rapture'
+
+ext {
+  raptureVersion = '3.0.4'
+}
+
+apply plugin: 'java'
+apply plugin: 'maven'
+
+repositories {
+  mavenLocal()
+  mavenCentral()
+}
+
+dependencies {
+  compile "net.rapture:RaptureAPI:$raptureVersion"
+  compile "net.rapture:RaptureCore:$raptureVersion"
+  compile 'org.apache.commons:commons-email:1.4'
+  compile "com.sparkjava:spark-core:2.5"
+  testCompile 'junit:junit:4.12'
+}
