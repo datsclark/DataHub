@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>Quick start with DataTable</title>   
+    <script src="js/webix/codebase/webix.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="js/webix/codebase/webix.css" type="text/css" charset="utf-8">
+</head>
+<body>
+  <div id="box"></div>
+    <script>
+        dtable = new webix.ui({
+        container:"box",
+        view:"datatable",
+        autoConfig:true,
+        url:"http://localhost:4568/demo/15C33"
+        //data:[
+        //    { id:1, title:"The Shawshank Redemption", year:1994, votes:678790},
+        //    { id:2, title:"The Godfather",            year:1972, votes:511495}
+        //]
+});
+    </script>
+</body>
+</html>
